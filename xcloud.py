@@ -195,18 +195,18 @@ def waitUntilClickable(browser: webdriver, by_: By, selector: str, time_to_wait:
     WebDriverWait(browser, time_to_wait).until(ec.element_to_be_clickable((by_, selector)))
 
 
-if __name__ == "__main__":
+# Define main function
+def main():
     # Initialize the VPN
-    initialize_VPN(save=1, area_input=['random regions United States 6'])
-    global i
+    #initialize_VPN(save=1, area_input=['random regions United States 6'])
     # Set the month to July
-    #i = 6
+    i = 6
     # Set the counter to 1
-    #j = 1
+    j = 1
     # Rotate the VPN 12 times
     try:
         for j in range(12):
-            rotate_VPN()
+            #rotate_VPN()
             # Generate credentials for the current month
             firstName, lastName, username, password = generate_credentials(i)
             # Print the credentials
@@ -226,8 +226,12 @@ if __name__ == "__main__":
             # Close the browser
             browser.quit()
             i = i + 1
-    except:
-        pass
+    except Exception as e:
+        print(e)
+
+# Run the main function
+if __name__ == '__main__':
+    main()
 
 		
 
