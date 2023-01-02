@@ -132,7 +132,8 @@ def create_account(driver: webdriver, is_mobile: bool = False, email: str = None
     print("Next clicked")
 
     # Complete the captcha
-    # Wait until the 'Enter' key is pressed
+    # Captcha consists of a picture and a text box, you will need to manually complete the captcha
+    # The script will wait until you press the 'Enter' key to continue
     while True:
         if msvcrt.getch() == b'\r':
             print("Captcha completed and account created")
